@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập tạo form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 30px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .form-box {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2d6a4f;
+            margin-top: 0;
+        }
+
+        .field {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .options label {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 8px;
+            font-weight: normal;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #2d6a4f;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1b4332;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- PHẦN 1: FORM SỞ THÍCH -->
+    <div class="form-box">
+        <h2>Phần 1: Form thông tin cá nhân</h2>
+
+        <form action="#" method="get">
+            <div class="field">
+                <label for="yourname">Họ và tên</label>
+                <input type="text" id="yourname"
+                       name="yourname" placeholder="Nhập họ và tên">
+            </div>
+
+            <div class="field">
+                <label for="email1">Email</label>
+                <input type="email" id="email1"
+                       name="email" placeholder="Nhập email">
+            </div>
+
+            <div class="field">
+                <label>Sở thích</label>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="hobby" value="Đọc sách">
+                        Đọc sách
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="Du lịch">
+                        Du lịch
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="Âm nhạc">
+                        Âm nhạc
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="Thể thao">
+                        Thể thao
+                    </label>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+
+    <!-- PHẦN 2: FORM ĐĂNG KÝ HỌC VIÊN -->
+    <div class="form-box">
+        <h2>Phần 2: Form đăng ký học viên</h2>
+
+        <form action="#" method="get">
+            <div class="field">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname"
+                       name="fullname" required
+                       placeholder="Nhập họ và tên">
+            </div>
+
+            <div class="field">
+                <label for="email2">Email</label>
+                <input type="email" id="email2"
+                       name="email" required
+                       placeholder="example@gmail.com">
+            </div>
+
+            <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone"
+                       name="phone" placeholder="Nhập số điện thoại">
+            </div>
+
+            <div class="field">
+                <label for="birthday">Ngày sinh</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+            <div class="field">
+                <label>Giới tính</label>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="gender" value="Nam">
+                        Nam
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Nữ">
+                        Nữ
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Khác">
+                        Khác
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="address">Địa chỉ</label>
+                <textarea id="address" name="address"
+                          rows="3" placeholder="Nhập địa chỉ"></textarea>
+            </div>
+
+            <div class="field">
+                <label for="course">Khóa học</label>
+                <select id="course" name="course">
+                    <option value="">-- Chọn khóa học --</option>
+                    <option value="HTML & CSS">HTML &amp; CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Hình thức học</label>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="study_type" value="Online">
+                        Online
+                    </label>
+
+                    <label>
+                        <input type="radio" name="study_type" value="Offline">
+                        Offline
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Sở thích</label>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="hobby" value="Đọc sách">
+                        Đọc sách
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="Âm nhạc">
+                        Âm nhạc
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="Lập trình">
+                        Lập trình
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobby" value="Du lịch">
+                        Du lịch
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="note">Ghi chú</label>
+                <textarea id="note" name="note"
+                          rows="4" placeholder="Nhập ghi chú nếu có"></textarea>
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
